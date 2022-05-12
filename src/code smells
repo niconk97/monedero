@@ -8,6 +8,11 @@ Code Smell identificados en la clase Cuenta:
 3) Message Chains y Long Method - en el metodo getMontoExtraidoA de la clase cuenta se podria descomponer. Teniendo un metodo aparte donde
 se pueda filtrar los movimientos segun la fecha.
 
+4) Duplicated Code (en metodos Sacar y Poner se debe validar que el monto sea un valor positivo)
+
+5) Long Method tambien en los metodos Sacar y Poner porque la logica de las validaciones "ensucian" el objetivo de cada metodo.
+Se podria delegar las validaciones en otro/s metodo/s.
+
 Code Smell identificados en la clase Movimiento:
 
 1) Primitive Obsession (double / boolean)
