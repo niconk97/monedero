@@ -13,10 +13,17 @@ se pueda filtrar los movimientos segun la fecha.
 5) Long Method tambien en los metodos Sacar y Poner porque la logica de las validaciones "ensucian" el objetivo de cada metodo.
 Se podria delegar las validaciones en otro/s metodo/s.
 
+
+---------------------------------------------------------
+
 Code Smell identificados en la clase Movimiento:
 
 1) Primitive Obsession (double / boolean)
+
 2) Type Test - Missing Polymorphism (en varias oportunidades la clase Movimiento
  debe consultar si es un deposito o si es una extraccion, a él mismo).
  Cuenta tambien consulta si un movimiento es un deposito o una extraccion
-3)
+
+3)  Divergent Change (Movimiento podria separarse y mediante el refactor "Extract class" separarlos dos clases: Extraccion y Deposito).
+    Se podrian crear metodos polimorficos y no tener estar preguntando si es un deposito/extraccion por cada accion que se realice
+    en la clase movimiento.
