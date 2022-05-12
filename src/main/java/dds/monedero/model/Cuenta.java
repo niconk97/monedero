@@ -8,6 +8,7 @@ import dds.monedero.exceptions.SaldoMenorException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Cuenta {
 
@@ -59,10 +60,15 @@ public class Cuenta {
   }
 
   public Double getMontoExtraidoA(LocalDate fecha) {
-    return getMovimientos().stream()
+    List<Movimiento> extraccionesDeLaFecha = extraccionesSegunFecha(fecha);
+    return extraccionesDeLaFecha.stream().mapToDouble(Movimiento::getMonto).sum();
+  }
+
+  public List<Movimiento> extraccionesSegunFecha(LocalDate fecha){
+    return getMovimientos()
+        .stream()
         .filter(movimiento -> !movimiento.isDeposito() && movimiento.getFecha().equals(fecha))
-        .mapToDouble(Movimiento::getMonto)
-        .sum();
+        .collect(Collectors.toList());
   }
 
   public List<Movimiento> getMovimientos() {

@@ -1,8 +1,12 @@
 Code Smell identificados en la clase Cuenta:
 
 1) Primitive Obsession (double / boolean)
+
 2) Long Parameter List ( el metodo agregarMovimiento de la clase Cuenta facilmente podria recibir un objeto
     "movimiento", no tiene la necesidad de conocer todos los atributos de un movimiento y crearlo al momento de agregar.
+
+3) Message Chains y Long Method - en el metodo getMontoExtraidoA de la clase cuenta se podria descomponer. Teniendo un metodo aparte donde
+se pueda filtrar los movimientos segun la fecha.
 
 Code Smell identificados en la clase Movimiento:
 
