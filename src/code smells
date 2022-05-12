@@ -1,7 +1,13 @@
 Code Smell identificados en la clase Cuenta:
 
 1) Primitive Obsession (double / boolean)
+2) Long Parameter List ( el metodo agregarMovimiento de la clase Cuenta facilmente podria recibir un objeto
+    "movimiento", no tiene la necesidad de conocer todos los atributos de un movimiento y crearlo al momento de agregar.
 
 Code Smell identificados en la clase Movimiento:
 
 1) Primitive Obsession (double / boolean)
+2) Type Test - Missing Polymorphism (en varias oportunidades la clase Movimiento
+ debe consultar si es un deposito o si es una extraccion, a él mismo).
+ Cuenta tambien consulta si un movimiento es un deposito o una extraccion
+3)
