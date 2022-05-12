@@ -1,0 +1,7 @@
+Code Smell identificados en la clase Cuenta:
+
+1) Primitive Obsession (double / boolean)
+
+Code Smell identificados en la clase Movimiento:
+
+1) Primitive Obsession (double / boolean)
