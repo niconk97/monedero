@@ -13,6 +13,9 @@ se pueda filtrar los movimientos segun la fecha.
 5) Long Method tambien en los metodos Sacar y Poner porque la logica de las validaciones "ensucian" el objetivo de cada metodo.
 Se podria delegar las validaciones en otro/s metodo/s.
 
+6) Misplaced Method -- El metodo agregateA no deberia existir. La responsabilidad de agregar un movimiento a la cuenta deberia ser
+    de la misma clase Cuenta y no que cada movimiento se agregue a una cuenta.
+
 
 ---------------------------------------------------------
 
