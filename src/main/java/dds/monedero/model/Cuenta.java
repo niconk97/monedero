@@ -77,25 +77,25 @@ public class Cuenta {
     this.saldo = saldo;
   }
 
-  public void validacionMontoPositivo(Double monto){
+  private void validacionMontoPositivo(Double monto){
     if (monto <= 0) {
       throw new MontoNegativoException(monto + ": el monto a ingresar debe ser un valor positivo");
     }
   }
 
-  public void validacionDepositosMaximos(){
+  private void validacionDepositosMaximos(){
     if (getDepositos().stream().count() >= 3) {
       throw new MaximaCantidadDepositosException("Ya excedio los " + 3 + " depositos diarios");
     }
   }
 
-  public void validacionSaldoMenor(Double monto){
+  private void validacionSaldoMenor(Double monto){
     if (getSaldo() - monto < 0) {
       throw new SaldoMenorException("No puede sacar mas de " + getSaldo() + " $");
     }
   }
 
-  public void validacionExtraccionesMaximos(Double monto){
+  private void validacionExtraccionesMaximos(Double monto){
     Double montoExtraidoHoy = getMontoExtraidoA(LocalDate.now());
     Double limite = 1000 - montoExtraidoHoy;
     if (monto > limite) {
