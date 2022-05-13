@@ -27,3 +27,7 @@ Code Smell identificados en la clase Movimiento:
 3)  Divergent Change (Movimiento podria separarse y mediante el refactor "Extract class" separarlos dos clases: Extraccion y Deposito).
     Se podrian crear metodos polimorficos y no tener estar preguntando si es un deposito/extraccion por cada accion que se realice
     en la clase movimiento.
+
+4) Duplicated Code en los metodos fueDepositado y fueExtraido. Se reemplaza por fueRealizadaEn.
+    Se elimina el metodo esDeLaFecha porque su logica esta en fueRealizadaEn.
+
